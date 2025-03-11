@@ -10,17 +10,17 @@ import jakarta.persistence.Id;
 public class Book {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	@Column
 	private String name;
 	@Column
 	private String author;
 	@Column
 	private String price;
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -41,7 +41,12 @@ public class Book {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public Book(int id, String name, String author, String price) {
+	
+	public Book() {
+		
+	}
+	
+	public Book(Integer id, String name, String author, String price) {
 		super();
 		this.id = id;
 		this.name = name;
