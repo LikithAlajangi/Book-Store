@@ -20,4 +20,13 @@ public class BookService {
 	public List<Book> getAllBooks(){
 		return repo.findAll();
 	}
+	
+	public Book getBookById(int id) {
+	    return repo.findById(id).orElseThrow(() -> new RuntimeException("Book not found with id: " + id));
+	}
+	
+	public void deletebyId(int id) {
+		repo.deleteById(id);
+	}
+
 }
